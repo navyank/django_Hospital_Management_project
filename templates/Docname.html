@@ -1,0 +1,45 @@
+{% extends 'indexrecep.html' %}
+{% block body %}
+
+<body><head><style>
+#customers {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#customers td, #customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+/*#customers tr:nth-child(even){background-color: #00ccff;}*/
+
+#customers tr:hover {background-color: #ddd;}
+
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: center;
+  background-color:#00ccff;
+  color: white;
+}
+</style></head>
+
+
+<form id="form1" name="form1" method="post" action="">
+  <table id="customers" class="table" width="242" border="1">
+    <tr>
+      <th width="111">Doctor Names </th>
+      <th width="115">&nbsp;</th>
+    </tr>
+    {% for i in val %}
+    <tr>
+      <td>{{i.Fname}} {{i.Lname}}</td>
+      <td><a href="{% url 'docdetail' %}#faq">click</a></td>
+    </tr>
+    {% endfor %}
+  </table>
+</form>
+</body>
+{% endblock %}

@@ -1,0 +1,61 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Untitled Document</title>
+<style>
+  .dbresult,.dbresult td,.dbresult th{
+    border:1px solid black;
+    border-collapse: collapse;
+    padding: 8px;
+    font-family: sans-serif;
+  }
+  .dbresult{
+    margin:auto;
+  }
+  .dbresult tr:nth-child(odd){
+    background-color:#b2d0d6;
+  }
+  .dbresult tr:nth-child(even){
+    background-color:  lightcyan;
+  }
+  .dbresult input{
+    padding: 10px 20px;
+    font-weight: bold;
+  }
+</style>
+</head>
+
+<body>
+<form id="form1" name="form1" method="post" action="">
+  <table class="dbresult" width="463" border="1">
+    <tr>
+      <td colspan="8">Today Work </td>
+    </tr>
+    <tr>
+      <td width="80">SI.No</td>
+      <td width="82">Name of patient </td>
+      <td width="7">DOB</td>
+      <td width="12">Blood group </td>
+      <td width="50">Doctor Name </td>
+      <td width="30">Patient ID </td>
+      <td width="47">TEST Name </td>
+      <td width="103">&nbsp;</td>
+    </tr>
+   {% for i in val %}
+    <tr>
+      <td></td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td><div align="center"><a href="report">click</a></div></td>
+    </tr>
+    {% endfor %}
+  </table>
+       <td><div align="center"><a href="nursehome">back to Homepage</a></div></td>
+   </form>
+</body>
+</html>

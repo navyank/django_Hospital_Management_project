@@ -1,0 +1,47 @@
+{% extends 'indexnurse.html' %}
+{% block body %}
+
+<body><head><style>
+#customers {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#customers td, #customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+/*#customers tr:nth-child(even){background-color: #00ccff;}*/
+
+#customers tr:hover {background-color: #ddd;}
+
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: center;
+  background-color:#00ccff;
+  color: white;
+}
+</style></head></head>
+<form id="form1" name="form1" method="post" action="/inserttestname">
+  <table id="customers" width="590" class="table" border="1">
+    <tr>
+      <td>Test Name: </td>
+      <td><label>
+        <input type="text" name="textfield" />
+      </label></td>
+    </tr>
+    <tr>
+      <td colspan="2"><label>
+        <div align="center">
+          <input type="submit" name="Submit" value="ADD" />
+          </div>
+      </label></td>
+    </tr>
+  </table>
+ <div align="center"><a href="availableTest#faq">back to Previous page?</a></div>
+</form>
+</body>
+{% endblock %}

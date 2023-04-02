@@ -1,0 +1,155 @@
+{% extends 'indexdoctor.html' %}
+{% block body %}
+
+<body><head><style>
+#customers {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#customers td, #customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+/*#customers tr:nth-child(even){background-color: #00ccff;}*/
+
+#customers tr:hover {background-color: #ddd;}
+
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: center;
+  background-color:#00ccff;
+  color: white;
+}
+</style></head></head>
+
+<form id="form1" name="form1" method="post" action="{%  url 'insertmyStatus' %}">
+  <table id="customers" width="590" class="table" border="1">
+       <tr>
+      <td height="48">My ID</td>
+      <td><label>
+        <select name="docid">
+          {% for i in var %}
+          <option value="{{i.id}}">{{i.id}}</option>
+          {% endfor %}
+        </select>
+      </label></td>
+    </tr>
+<tr>
+      <td>Leave on </td>
+      <td colspan="5"><label>
+        <select name="leave">
+          <option>sunday</option>
+          <option>monday</option>
+          <option>thuesday</option>
+          <option>wednessday</option>
+          <option>thursday</option>
+          <option>friday</option>
+          <option>saturday</option>
+          <option>no leave</option>
+        </select>
+      </label></td>
+      <!--<td><label>-->
+        <!--<input type="submit" name="Submit" value="Add" />-->
+      <!--</label></td>-->
+      <!--<td><label>-->
+        <!--<input type="reset" name="Submit2" value="Reset" />-->
+      <!--</label></td>-->
+    </tr>
+    <tr>
+      <td>not available at time      </td>
+      <td colspan="5"><label>
+        <input type="time" name="time1" />
+      </label></td>
+      <!--<td><label>-->
+        <!--<input type="submit" name="Submit3" value="Add" />-->
+      <!--</label></td>-->
+      <!--<td><label>-->
+        <!--<input type="reset" name="Submit4" value="Reset" />-->
+      <!--</label></td>-->
+    </tr>
+    <tr>
+      <td>op time </td>
+      <td colspan="5"><label>
+        <input type="time" name="time2" />
+      </label></td>
+      <!--<td><label>-->
+        <!--<input type="submit" name="Submit5" value="Add" />-->
+      <!--</label></td>-->
+      <!--<td><label>-->
+        <!--<input type="reset" name="Submit6" value="Reset" />-->
+      <!--</label></td>-->
+    </tr>
+    <tr>
+      <td>No.of patient checking fornoon </td>
+      <td colspan="5"><label>
+        <select name="fornoon">
+          <option>0</option>
+          <option>1</option>
+          <option>2</option>
+          <option>3</option>
+          <option>4</option>
+          <option>5</option>
+          <option>6</option>
+          <option>7</option>          
+          <option>8</option>
+          <option>9</option>
+          <option>10</option>
+          <option>11</option>
+          <option>12</option>
+          <option>13</option>
+          <option>14</option>
+          <option>15</option>
+        </select>
+      </label></td>
+      <!--<td><label>-->
+        <!--<input type="submit" name="Submit7" value="Add" />-->
+      <!--</label></td>-->
+      <!--<td><label>-->
+        <!--<input type="reset" name="Submit9" value="Reset" />-->
+      <!--</label></td>-->
+    </tr>
+    <tr>
+      <td>No.of patient checking afternoon </td>
+     <td colspan="5"><label>
+        <select name="afternoon">
+          <option>0</option>
+          <option>1</option>
+          <option>2</option>
+          <option>3</option>
+          <option>4</option>
+          <option>5</option>
+          <option>6</option>
+          <option>7</option>          
+          <option>8</option>
+          <option>9</option>
+          <option>10</option>
+          <option>11</option>
+          <option>12</option>
+          <option>13</option>
+          <option>14</option>
+          <option>15</option>
+        </select>
+      </label></td><tr>
+      <td colspan="2"><label>
+        <div align="center">
+          <input type="submit" name="Submit2" value="ADD" />
+          &nbsp;
+        </div>
+      </label></td>
+    </tr>
+      <!--<td><label>-->
+      <!--<input type="submit" name="Submit8" value="Add" />-->
+      <!--</label></td>-->
+      <!--<td><label>-->
+        <!--<input type="reset" name="Submit10" value="Reset" />-->
+      <!--</label></td>-->
+    </tr>
+</table>
+<div align="center"><a href="Dochome">back to Homepage</a></div>
+</form>
+</body>
+{% endblock %}

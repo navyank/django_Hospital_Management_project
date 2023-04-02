@@ -1,0 +1,104 @@
+{% extends 'indexadmin.html' %}
+{% block body %}
+
+<body><head><style>
+#customers {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#customers td, #customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+/*#customers tr:nth-child(even){background-color: #00ccff;}*/
+
+#customers tr:hover {background-color: #ddd;}
+
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: center;
+  background-color:#00ccff;
+  color: white;
+}
+</style></head>
+<form id="form1" name="form1" method="post" action="/inserteditnurse">
+  <table width="321" border="1"id="customers" class="table" >
+    <tr>
+      <td width="75">First Name</td>
+      <td width="230"><label>
+        <input type="text" name="textfield" value="{{ val.Fname }}"/>
+      </label></td>
+    </tr>
+    <tr>
+      <td>Last Name </td>
+      <td><label>
+        <input type="text" name="textfield2" value="{{ val.Lname }}" />
+      </label></td>
+    </tr>
+    <tr>
+      <td>Gender</td>
+      <td><label>
+        <input name="radiobutton" type="radio" value="male" {% if val.gender == "male" %} checked {% endif %} />
+      male 
+      <input name="radiobutton" type="radio" value="female" {% if val.gender == "female" %} checked {% endif %} />
+      female 
+      <input name="radiobutton" type="radio" value="others" {% if val.gender == "others" %} checked {% endif %} />
+      others</label></td>
+    </tr>
+    <tr>
+      <td>DOB</td>
+      <td><label>
+        <input type="date" name="textfield3" />
+      </label></td>
+    </tr>
+    <tr>
+      <td>Phone Number </td>
+      <td><label>
+        <input type="text" name="textfield13" value="{{ val.contact_no}}" />
+      </label></td>
+    </tr>
+    <tr>
+      <td>Place:</td>
+      <td><label>
+        <input type="text" name="textfield6" value="{{ val.place }}" />
+      </label></td>
+    </tr>
+    <tr>
+      <td>Post Office: </td>
+      <td><label>
+        <input type="text" name="textfield7" value="{{ val.post_office }}" />
+      </label></td>
+    </tr>
+    <tr>
+      <td>Pin Code : </td>
+      <td><label>
+        <input type="text"  name="textfield8" value="{{ val.pin_code }}"/>
+      </label></td>
+    </tr>
+    <tr>
+      <td>Email id: </td>
+      <td><label>
+        <input type="text" name="textfield15" value="{{ val.email_id }}" />
+      </label></td>
+    </tr>
+    <tr>
+      <td>Department</td>
+      <td><label>
+        <input type="text" name="textfield4" value="{{ val.deptName }}" />
+      </label></td>
+    </tr>
+    <tr>
+      <td colspan="2"><label>
+        <div align="center">
+          <input type="submit" name="Submit" value="Update" />
+        </div>
+      </label></td>
+    </tr>
+  </table>
+</form>
+</body>
+{% endblock %}

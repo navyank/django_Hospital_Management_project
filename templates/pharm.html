@@ -1,0 +1,62 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Untitled Document</title>
+<style>
+  .dbresult,.dbresult td,.dbresult th{
+    border:1px solid black;
+    border-collapse: collapse;
+    padding: 8px;
+    font-family: sans-serif;
+  }
+  .dbresult{
+    margin:auto;
+  }
+  .dbresult tr:nth-child(odd){
+    background-color:#b2d0d6;
+  }
+  .dbresult tr:nth-child(even){
+    background-color:  lightcyan;
+  }
+  .dbresult input{
+    padding: 10px 20px;
+    font-weight: bold;
+  }
+</style>
+</head>
+
+<body>
+<form id="form1" name="form1" method="post" action="">
+  <table class="dbresult" width="1040" height="183" border="1">
+    <tr>
+      <td width="48">SI.No</td>
+      <td width="162">Name</td>
+      <td width="122">DOB</td>
+      <td width="130">Patient ID </td>
+      <td width="128">Doctor Name </td>
+      <td width="98">Madicine</td>
+      <td width="92">Dosage</td>
+      <td width="89">Bill Amound </td>
+      <td width="113">Download the Bill </td>
+    </tr>
+
+    <tr>
+      <td>{{forloop.counter}}</td>
+      <td></td>
+      <td>&nbsp;</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td><label>
+        <input type="submit" name="Submit" value="Download" />
+      </label></td>
+    </tr>
+
+  </table>
+<div align="center"><a href="pharmhome">back to Homepage</a></div>
+</form>
+</body>
+</html>

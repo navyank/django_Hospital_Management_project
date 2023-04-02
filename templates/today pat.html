@@ -1,0 +1,143 @@
+{% extends 'indexdoctor.html' %}
+{% block body %}
+
+<body><head><style>
+#customers {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#customers td, #customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+/*#customers tr:nth-child(even){background-color: #00ccff;}*/
+
+#customers tr:hover {background-color: #ddd;}
+
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: center;
+  background-color:#00ccff;
+  color: white;
+}
+</style></head>
+
+
+
+<form id="form1" name="form1" method="post" action="searchPatient">
+  <table id="customers" class="table" width="639" border="1">
+    <!--<tr>-->
+      <!--<td>From Date: </td>-->
+      <!--<td><label>-->
+        <!--<input type="date" name="textfield" value="{{d1}}" />-->
+      <!--</label></td>-->
+      <!--<td>To Date : </td>-->
+      <!--<td><label>-->
+        <!--<input type="date" name="textfield2" value="{{d2}}" />-->
+      <!--</label></td>-->
+      <!--<td colspan="2"><label>-->
+        <!--<input type="submit" name="Submit" value="Search" />-->
+      <!--</label></td>-->
+    <!--</tr>-->
+    <tr>
+
+      <th width="128">patient ID </th>
+      <th width="128">Date</th>
+      <th width="110"><p>Name of Patient </p>      </th>
+      <th width="74">DOB</th>
+      <th width="60">Gender</th>
+      <th width="57">Blood Group </th>
+      <!--<td width="79">symtoms</td>-->
+      <th width="88">&nbsp;</th>
+    </tr>
+    {% for i in val %}
+    <tr>
+
+      <td>&nbsp;{{i.patientid.id}}</td>
+      <td>&nbsp;{{i.reg_date}}</td>
+      <td>{{i.patientid.Fname}} {{i.patientid.Lname}}</td>
+      <td>&nbsp;{{i.patientid.dob}}</td>
+      <td>{{i.patientid.gender}}</td>
+      <td>&nbsp;{{i.patientid.blood_gp}}</td>
+      <!--<td>{{i.symtoms}}</td>-->
+      <td><a href="/viewpat/{{ i.id }}#faq">click</a></td>
+    </tr>
+     {% endfor %}
+    <!--tr>
+      <td>Leave on </td>
+      <td colspan="5"><label>
+        <select name="select">
+          <option>sunday</option>
+          <option>monday</option>
+          <option>thuesday</option>
+          <option>wednessday</option>
+          <option>thursday</option>
+          <option>friday</option>
+          <option>saturday</option>
+          <option>no leave</option>
+        </select>
+      </label></td>
+      <td><label>
+        <input type="submit" name="Submit" value="Add" />
+      </label></td>
+      <td><label>
+        <input type="reset" name="Submit2" value="Reset" />
+      </label></td>
+    </tr-->
+    <!--tr>
+      <td>not available at time      </td>
+      <td colspan="5"><label>
+        <input type="time" name="time" />
+      </label></td>
+      <td><label>
+        <input type="submit" name="Submit3" value="Add" />
+      </label></td>
+      <td><label>
+        <input type="reset" name="Submit4" value="Reset" />
+      </label></td>
+    </tr>
+    <tr>
+      <td>op time </td>
+      <td colspan="5"><label>
+        <input type="time" name="time" />
+      </label></td>
+      <td><label>
+        <input type="submit" name="Submit5" value="Add" />
+      </label></td>
+      <td><label>
+        <input type="reset" name="Submit6" value="Reset" />
+      </label></td>
+    </tr-->
+    <!--tr>
+      <td>No.of patient checking fornoon </td>
+      <td colspan="5"><label>
+        <input type="text" name="textfield2" />
+      </label></td>
+      <td><label>
+        <input type="submit" name="Submit7" value="Add" />
+      </label></td>
+      <td><label>
+        <input type="reset" name="Submit9" value="Reset" />
+      </label></td>
+    </tr-->
+    <!--tr>
+      <td>No.of patient checking afternoon </td>
+      <td colspan="5"><label>
+        <input type="text" name="textfield" />
+      </label></td>
+      <td><label>
+      <input type="submit" name="Submit8" value="Add" />
+      </label></td>
+      <td><label>
+        <input type="reset" name="Submit10" value="Reset" />
+      </label></td>
+    </tr-->
+  </table>
+ <!--<div align="center"><a href="Dochome">back to Homepage</a></div>-->
+</form>
+</body>
+{% endblock %}

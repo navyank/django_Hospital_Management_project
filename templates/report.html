@@ -1,0 +1,113 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Untitled Document</title>
+<style>
+  .dbresult,.dbresult td,.dbresult th{
+    border:1px solid black;
+    border-collapse: collapse;
+    padding: 8px;
+    font-family: sans-serif;
+  }
+  .dbresult{
+    margin:auto;
+  }
+  .dbresult tr:nth-child(odd){
+    background-color:#b2d0d6;
+  }
+  .dbresult tr:nth-child(even){
+    background-color:  lightcyan;
+  }
+  .dbresult input{
+    padding: 10px 20px;
+    font-weight: bold;
+  }
+</style>
+</head>
+
+<body>
+<form id="form1" name="form1" method="post" action="">
+  <table class="dbresult" width="100%" height="700" border="1">
+    <tr>
+      <td width="132">Name of patient </td>
+      <td colspan="2"><label>
+        <input type="text" name="textfield" />
+      </label></td>
+    </tr>
+    <tr>
+      <td>DOB</td>
+      <td colspan="2"><label>
+        <input type="text" name="textfield2" />
+      </label></td>
+    </tr>
+    <tr>
+      <td>Blood Group </td>
+      <td colspan="2"><label>
+        <input type="text" name="textfield5" />
+      </label></td>
+    </tr>
+    <tr>
+      <td>Patient ID </td>
+      <td colspan="2"><label>
+        <input type="text" name="textfield4" />
+      </label></td>
+    </tr>
+    <tr>
+      <td>Test Name </td>
+      <td colspan="2"><label>
+        <input type="text" name="textfield6" />
+      </label></td>
+    </tr>
+    <tr>
+      <td colspan="3"><table width="100%" border="1">
+        <tr>
+          <td width="127">Blood count </td>
+          <td colspan="2"><label>
+            <input type="text" name="textfield7" />
+          </label></td>
+          </tr>
+        <tr>
+          <td>Test status </td>
+          <td width="285"><label>
+            <input name="radiobutton" type="radio" value="radiobutton" />
+            positive</label></td>
+          <td width="241"><label>
+            <input name="radiobutton" type="radio" value="radiobutton" />
+            negative</label></td>
+        </tr>
+	 <tr>
+          <td width="127">Blood Pressure </td>
+          <td colspan="2"><label>
+            <input type="text" name="textfield7" />
+          </label></td>
+          </tr>
+      </table></td>
+    </tr>
+    
+    <tr>
+      <td>Download Report</td>
+      <td width="285"><label>
+        <div align="center">
+          <input type="submit" name="Submit" value="download" />
+          </div>
+      </label></td>
+      <td width="248"><label>
+        <div align="center">
+          <input type="reset" name="Submit2" value="Reset" />
+          </div>
+      </label></td>
+    </tr>
+    <tr>
+      <td>Sent to Doctor </td>
+      <td colspan="2"><label>
+        <div align="center">
+          <input type="submit" name="Submit3" value="sent" />
+        </div>
+      </label></td>
+    </tr>
+  </table>
+ <div align="center"><a href="nurseTodayWork">back to Previous page?</a></div>
+</form>
+</body>
+</html>

@@ -1,0 +1,190 @@
+{% extends 'indexdoctor.html' %}
+{% block body %}
+
+<body><head><style>
+#customers {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#customers td, #customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+/*#customers tr:nth-child(even){background-color: #00ccff;}*/
+
+#customers tr:hover {background-color: #ddd;}
+
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: center;
+  background-color:#00ccff;
+  color: white;
+}
+</style></head></head>
+<form id="form1" name="form1" method="post" action="\insertpatList">
+  <table id="customers" width="590" class="table" border="1">
+    <tr>
+      <td width="90">Name of patient </td>
+      <td colspan="3"><label>
+        {{val.patientid.Fname}} {{val.patientid.Lname}}
+      </label></td>
+    </tr>
+    <tr>
+      <td>DOB</td>
+      <td colspan="3"><label>
+        {{val.patientid.dob}}
+      </label></td>
+    </tr>
+    <tr>
+      <td>Gender</td>
+      <td colspan="3"><label>
+        {{val.patientid.gender}}
+      </label></td>
+    </tr>
+    <tr>
+      <td>Blood Group </td>
+      <td colspan="3"><label>
+        {{val.patientid.blood_gp}}
+      </label></td>
+    </tr>
+    <tr>
+      <td>Patient ID </td>
+      <td colspan="3"><label>
+        {{val.patientid.id}}
+      </label></td>
+    </tr>
+    <tr>
+      <td>Test</td>
+      <td width="161"><label>
+
+        <select name="select12">
+        {% for i in vab %}
+          <option value="{{i.id}}">{{i.testName}}</option>
+        {% endfor %}
+        </select>
+      </label></td>
+      <!--<td width="38"><label>-->
+        <!--<input type="submit" name="Submit" value="Add" />-->
+      <!--</label></td>-->
+      <!--<td width="59"><label>-->
+        <!--<input type="reset" name="Submit5" value="Reset" />-->
+      <!--</label></td>-->
+    </tr>
+    <tr>
+      <td>Medicine</td>
+      <td><label>
+      <select name="select2">
+       {% for i in var %}
+        <option value="{{i.id}}">{{i.medicine_names}}</option>
+        {% endfor %}
+      </select>
+      </label></td>
+      <!--<td><label>-->
+        <!--<input type="submit" name="Submit2" value="Add" />-->
+      <!--</label></td>-->
+      <!--<td><label>-->
+        <!--<input type="reset" name="Submit6" value="Reset" />-->
+      <!--</label></td>-->
+    </tr>
+    <tr>
+      <td>Medicine Dosage </td>
+      <td><label>
+      <select name="select3">
+
+          <option>0</option>
+          <option>1</option>
+          <option>1.5</option>
+          <option>2</option>
+          <option>2.5</option>
+          <option>3</option>
+          <option>3.5</option>
+          <option>4</option>
+          <option>4.5</option>
+          <option>5</option>
+          <option>5.5</option>
+          <option>6</option>
+          <option>6.5</option>
+          <option>7</option>
+          <option>7.5</option>
+          <option>8</option>
+          <option>10</option>
+
+      </select>
+      </label></td>
+      <!--<td><label>-->
+        <!--<input type="submit" name="Submit3" value="Add" />-->
+      <!--</label></td>-->
+      <!--<td><label>-->
+        <!--<input type="reset" name="Submit7" value="Reset" />-->
+      <!--</label></td>-->
+    </tr>
+     <tr>
+      <td>No of Tablets</td>
+      <td width="161"><label>
+        <select name="select32">
+        <option>nill</option>
+        <option>1</option>
+	<option>2</option>
+	<option>3</option>
+	<option>4</option>
+        </select>
+      </label></td>
+      <!--<td width="38"><label>-->
+        <!--<input type="submit" name="Submit" value="Add" />-->
+      <!--</label></td>-->
+      <!--<td width="59"><label>-->
+        <!--<input type="reset" name="Submit5" value="Reset" />-->
+      <!--</label></td>-->
+    </tr>
+	<tr>
+      <td>issue Date</td>
+      <td width="161"><label>
+        <input type="date" name="textfield13">
+      </label></td>
+      <!--<td width="38"><label>-->
+        <!--<input type="submit" name="Submit" value="Add" />-->
+      <!--</label></td>-->
+      <!--<td width="59"><label>-->
+        <!--<input type="reset" name="Submit5" value="Reset" />-->
+      <!--</label></td>-->
+    </tr>
+	<tr>
+      <td>Exp Date</td>
+      <td width="161"><label>
+        <input type="date" name="textfield3">
+      </label></td>
+      <!--<td width="38"><label>-->
+        <!--<input type="submit" name="Submit" value="Add" />-->
+      <!--</label></td>-->
+      <!--<td width="59"><label>-->
+        <!--<input type="reset" name="Submit5" value="Reset" />-->
+      <!--</label></td>-->
+    </tr>
+    <!--<tr>-->
+      <!--<td height="50">Status of patient </td>-->
+      <!--<td><label>-->
+        <!--<input type="text" name="textfield4">-->
+      <!--</label></td></tr>-->
+      <!--<td><label>-->
+        <!--<input type="submit" name="Submit4" value="Add" />-->
+      <!--</label></td>-->
+      <!--<td><label>-->
+        <!--<input type="reset" name="Submit8" value="Reset" />-->
+      <!--</label></td>-->
+    <tr>
+      <td colspan="9">
+      <div align="center">
+        <input type="submit" name="Submit" value="ADD" />
+      </div>
+      </label>
+    </td>
+    </tr>
+  </table>
+	<div align="center"><a href="today pat.html">back to Previous page?</a></div>
+</form>
+</body>
+{% endblock %}

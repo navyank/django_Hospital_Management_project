@@ -1,0 +1,172 @@
+{% extends 'indexrecep.html' %}
+{% block body %}
+<body>
+<!--<?php-->
+  <!---->
+ <!---->
+  <!--if(isset($_POST['Register'])){-->
+ <!---->
+    <!--$txtname=$_POST['txtname']." ".$_POST['lstname']; -->
+
+    <!--$lstname=$_POST['lstname']; -->
+
+    <!--$radiobutton=$_POST['radiobutton'];   -->
+    <!--$txtdob=$_POST['txtdob'];-->
+    <!--$txtphno=$_POST['txtphno'];-->
+    <!--$txtplace=$_POST['txtplace'];-->
+    <!--$txtPO=$_POST['txtPO'];-->
+    <!--$txtpin=$_POST['txtpin'];-->
+    <!--$txtbloodgp=$_POST['txtbloodgp'];-->
+
+
+    <!---->
+
+    <!--$server="localhost";-->
+    <!--$username="root";-->
+    <!--$password="";-->
+    <!--$dbname="hospital_mgmnt";-->
+    <!--$con=mysqli_connect($server,$username,$password,$dbname);-->
+
+    <!--// $con=mysqli_connect('localhost','root','','hospital_mgmnt');-->
+
+    <!--if(!$con){-->
+     <!--die('connection error: '. mysqli_connect_error());-->
+    <!--}-->
+    <!--else{-->
+      <!--echo("error");-->
+    <!--}-->
+    <!---->
+
+    <!--$query="INSERT INTO  tblpatient(Name,Gender,DOB,Blood_Group,Contact_Number,place,pin_code,post_office,)  values(' $txtname','$radiobutton',' $txtdob',' $txtbloodgp','$txtphno','$txtplace','$txtPO','$txtpin')";-->
+    <!--$result=mysqli_query($con, $query);-->
+
+    <!--if($result){-->
+      <!--echo ("<script type='text/javascript'>alert('inserted successfully');</script>");-->
+    <!--}else{-->
+      <!--echo ("error while inserting");-->
+    <!--}-->
+  <!--} -->
+  <!---->
+<!--?>--><head><style>
+#customers {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#customers td, #customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+/*#customers tr:nth-child(even){background-color: #00ccff;}*/
+
+#customers tr:hover {background-color: #ddd;}
+
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: center;
+  background-color:#00ccff;
+  color: white;
+}
+</style></head>
+<form id="form1" name="form1" method="post" action="/insertregpat">
+  <table class="dbresult" width="500" border="1" id="customers" class="table">
+    <tr>
+      <td width="52">Frist Name </td>
+      <td width="201"><label>
+        <input type="text" required="" name="txtname" />
+      </label></td>
+    </tr>
+    <tr>
+      <td>Last Name </td>
+      <td><label>
+        <input type="text" required="" name="lstname" />
+      </label></td>
+    </tr>
+    <tr>
+      <td>Gender</td>
+      <td><label>
+      <input name="radiobutton" type="radio" value="male" />
+male 
+<input name="radiobutton" checked type="radio" value="female" />
+female 
+<input name="radiobutton" type="radio" value="others" />
+others</label></td>
+    </tr>
+    <tr>
+      <td>DOB</td>
+      <td><label>
+        <input type="date" required="" name="txtdob" />
+     </td>
+    </tr>
+    <tr>
+      <td>Blood Group </td>
+      <td><label>
+        <input type="text"required="" name="txtbloodgp" />
+      </label></td>
+    </tr>
+      <tr>
+      <td>Email id: </td>
+      <td><label>
+        <input type="text" name="textfield21" />
+      </label></td>
+    </tr>
+    <tr>
+      <td>Contact Number </td>
+      <td><label>
+        <input type="text" required="" pattern="[6-9]{1}[0-9]{9}" maxlength="10" name="txtphno" />
+      </label></td>
+    </tr>
+    <!-- <tr>
+      <td>OTP</td>
+      <td><label>
+        <input type="submit" required="" name="Submit" value="verify" />
+      </label></td>
+    </tr>
+    <tr> -->
+    <tr>
+      <td>Place </td>
+      <td><label>
+        <input type="text"  required="" name="txtplace"/>
+      </label></td>
+    </tr>
+    <tr>
+      <td>Post Office</td>
+      <td><label>
+        <input type="text"  required="" name="txtPO"/>
+      </label></td>
+    </tr>
+    <tr>
+      <td>Pin Code</td>
+      <td><label>
+        <input type="text"  required="" name="txtpin" />
+      </label></td>
+    </tr>
+      <tr>
+      <td>Today Date</td>
+      <td><label>
+        <input type="date" required="" name="txtdate" />
+     </td>
+    </tr>
+    <!-- <tr>
+      <td><p>Address</p>      </td>
+      <td><label>
+        <textarea name="textarea" required=""></textarea>
+      </label></td>
+    </tr> -->
+    <tr>
+      <td colspan="2"><label>
+        <div align="center">
+          <input type="submit" name="Submit2" value="Register" />
+          &nbsp;
+          <input type="reset" name="Submit3" value="Reset" />
+        </div>
+      </label></td>
+    </tr>
+  </table>
+ <div align="center"><a href="Receptionisthome">back to Homepage</a></div>
+</form>
+</body>
+{% endblock %}

@@ -1,0 +1,118 @@
+{% extends 'indexadmin.html' %}
+{% block body %}
+<body><head><style>
+#customers {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#customers td, #customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+/*#customers tr:nth-child(even){background-color: #00ccff;}*/
+
+#customers tr:hover {background-color: #ddd;}
+
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: center;
+  background-color:#00ccff;
+  color: white;
+}
+</style></head>
+<form id="form1" name="form1" method="post" action="/insertregdoc">
+  <table width="321" border="1" id="customers" class="table" bgcolor="#f0f5f5" >
+    <tr>
+      <td width="75">First Name </td>
+      <td width="230"><label>
+        <input type="text" name="textfield" class="form-control"/>
+      </label></td>
+    </tr>
+    <tr>
+      <td>Last Name </td>
+      <td><label>
+        <input type="text" name="textfield2" class="form-control"/>
+      </label></td>
+    </tr>
+    <tr>
+      <td>Gender</td>
+      <td><label>
+        <input name="radiobutton" type="radio" value="radiobutton" />
+      male 
+      <input name="radiobutton" type="radio" value="radiobutton" />
+      female 
+      <input name="radiobutton" type="radio" value="radiobutton" />
+      others</label></td>
+    </tr>
+    <tr>
+      <td>DOB</td>
+      <td> <input type="date" name="textfield3"class="form-control" /></td>
+    </tr>
+    <tr>
+      <td>Email id: </td>
+      <td><label>
+        <input type="text" name="textfield21" class="form-control"/>
+      </label></td>
+    </tr>
+    <tr>
+      <td>Phone Number </td>
+      <td><label>
+        <input type="text" name="textfield13" class="form-control"/>
+      </label></td>
+    </tr>
+    <tr>
+      <td>Place:</td>
+      <td><label>
+        <input type="text" name="textfield6" class="form-control"  />
+      </label></td>
+    </tr>
+    <tr>
+      <td>Post Office: </td>
+      <td><label>
+        <input type="text" name="textfield7" class="form-control" />
+      </label></td>
+    </tr>
+    <tr>
+      <td>Pin Code : </td>
+      <td><label>
+        <input type="text"  name="textfield8" class="form-control"/>
+      </label></td>
+    </tr>
+    <tr>
+      <td>category: </td>
+      <td><label>
+        <input type="text"  name="textfield18" class="form-control"/>
+      </label></td>
+    </tr>
+    <tr>
+      <td>Qualification</td>
+      <td><input type="text" name="textfield5" class="form-control"/></td>
+    </tr>
+    <tr>
+      <td>UserName:</td>
+      <td><label>
+        <input type="text" required="" name="textfield19" class="form-control"/>
+      </label></td>
+    </tr>
+    <tr>
+      <td>Password:</td>
+      <td><label>
+        <input type="password"  name="textfield10" class="form-control"/>
+      </label></td>
+    </tr>
+    <tr>
+      <td colspan="2"><label>
+        <div align="center">
+          <input type="submit" name="Submit" value="Add" />
+          &nbsp;
+         </div>
+      </label></td>
+    </tr>
+  </table>
+</form>
+</body>
+{% endblock %}

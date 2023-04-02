@@ -1,0 +1,57 @@
+{% extends 'indexrecep.html' %}
+{% block body %}
+
+<body><head><style>
+#customers {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#customers td, #customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+/*#customers tr:nth-child(even){background-color: #00ccff;}*/
+
+#customers tr:hover {background-color: #ddd;}
+
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: center;
+  background-color:#00ccff;
+  color: white;
+}
+</style></head>
+
+
+<form id="form1" name="form1" method="post" action="">
+  <table id="customers" class="table" width="639" border="1">
+    <tr>
+      <th width="59">DoctorID</th>
+      <th width="59">DeptName</th>
+      <th width="59">Doctor Name</th>
+      <th width="60">Leave On </th>
+      <th width="144">Not Available At Time </th>
+      <th width="59">Op Time </th>
+      <th width="147">No.of Patient Checking Fornoon </th>
+      <th width="130">No.of Patient Checking Afternoon </th>
+    </tr>
+    {% for i in val %}
+    <tr>
+      <td>{{i.doctorid.id}}</td>
+      <td>{{i.doctorid.deptName_id}}</td>
+      <td>{{i.doctorid.Fname}} {{i.doctorid.Lname}}</td>
+      <td>&nbsp;{{i.leave_on}}</td>
+      <td>&nbsp;{{i.not_available_at}}</td>
+      <td>&nbsp;{{i.op_time}}</td>
+      <td>&nbsp;{{i.no_patient_fornoon}}</td>
+      <td>&nbsp;{{i.no_patient_afternoon}}</td>
+    </tr>
+    {% endfor %}
+  </table>
+</form>
+</body>
+{% endblock %}

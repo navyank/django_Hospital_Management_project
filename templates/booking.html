@@ -1,0 +1,81 @@
+{% extends 'indexrecep.html' %}
+{% block body %}
+
+<body><head><style>
+#customers {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#customers td, #customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+/*#customers tr:nth-child(even){background-color: #00ccff;}*/
+
+#customers tr:hover {background-color: #ddd;}
+
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: center;
+  background-color:#00ccff;
+  color: white;
+}
+</style></head>
+<form id="form1" name="form1" method="post" action="/insertbooking">
+  <table id="customers" class="table" width="342" border="1">
+    <tr>
+      <td height="48">PatientID </td>
+      <td><select name="patid">
+        {% for i in val %}
+        <option value="{{i.id}}">{{i.id}}</option>
+        {% endfor %}
+      </select></td>
+    </tr>
+    <tr>
+      <td height="48">Registration Date </td>
+      <td><label>
+        <input type="date" name="regdate" />
+      </label></td>
+    </tr>
+    <tr>
+      <td height="55">Registration Time </td>
+      <td><label>
+        <input type="time" name="regtime" />
+      </label></td>
+    </tr><tr>
+      <td height="48">Tocken Number </td>
+      <td><label>
+        <input type="text" name="tokenNo" />
+      </label></td>
+    </tr>
+    <!--<tr>-->
+      <!--<td height="49">Symtoms</td>-->
+      <!--<td><label>-->
+        <!--<textarea name="textarea"></textarea>-->
+      <!--</label></td>-->
+    <!--</tr>-->
+    <tr>
+      <td height="48">Doctor Name </td>
+      <td><select name="docid">
+        {% for i in var %}
+        <option value="{{i.id}}">{{i.Fname}} {{i.Lname}}</option>
+        {% endfor %}
+      </select></td>
+    </tr>
+    <tr>
+      <td height="48" colspan="2"><label>
+        <div align="center">
+          <input type="submit" name="Submit" value="submit" />&nbsp;
+          <!--<input type="reset" name="Submit2" value="reset" />-->
+          </div>
+      </label></td>
+    </tr>
+  </table>
+  <div align="center"><a href="Receptionisthome">back to Homepage</a></div>
+</form>
+</body>
+{% endblock %}

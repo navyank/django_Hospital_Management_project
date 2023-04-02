@@ -1,0 +1,111 @@
+{% extends 'indexadmin.html' %}
+{% block body %}
+
+
+<body><head><style>
+#customers {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#customers td, #customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+/*#customers tr:nth-child(even){background-color: #00ccff;}*/
+
+#customers tr:hover {background-color: #ddd;}
+
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: center;
+  background-color:#00ccff;
+  color: white;
+}
+</style></head>
+<form id="form1" name="form1" method="post" action="/insertregrecep">
+  <table id="customers" class="table" width="245" border="1">
+    <tr>
+      <td width="172">First Name </td>
+      <td width="230"><label>
+        <input type="text" name="textfield" required=""/>
+      </label></td>
+    </tr>
+    <tr>
+      <td>Last Name </td>
+      <td width="230"><label>
+        <input type="text" name="textfield2" required=""/>
+      </label></td>
+    </tr>
+    <tr>
+      <td>Gender</td>
+      <td><label>
+        <input name="radiobutton" checked type="radio" value="radiobutton" />
+      male 
+      <input name="radiobutton" type="radio" value="radiobutton" />
+      female 
+      <input name="radiobutton" type="radio" value="radiobutton" />
+      others</label></td>
+    </tr>
+    <tr>
+      <td>DOB</td>
+      <td><label>
+        <input type="date" required="" name="textfield15"  />
+      </label></td>
+    </tr>
+    <tr>
+      <td>Phone Number </td>
+      <td><label>
+        <input type="text" required="" name="textfield3" pattern="[6-9]{1}[0-9]{9}" maxlength="10"  />
+      </label></td>
+    </tr>
+    <tr>
+      <td>Email id: </td>
+      <td><label>
+        <input type="text" name="textfield21" />
+      </label></td>
+    </tr>
+    <tr>
+      <td>Place </td>
+      <td><label>
+        <input type="text"  required="" name="txtplace"/>
+      </label></td>
+    </tr>
+    <tr>
+      <td>Post Office</td>
+      <td><label>
+        <input type="text"  required="" name="txtPO"/>
+      </label></td>
+    </tr>
+    <tr>
+      <td>Pin Code</td>
+      <td><label>
+        <input type="text"  required="" name="txtpin" />
+      </label></td>
+    </tr>
+     <tr>
+      <td>UserName:</td>
+      <td><label>
+        <input type="text" required="" name="textfield19" class="form-control"/>
+      </label></td>
+    </tr>
+    <tr>
+      <td>Password:</td>
+      <td><label>
+        <input type="password"  name="textfield10"/>
+      </label></td>
+    </tr>
+     <tr>
+      <td colspan="2"><label>
+      <div align="center">
+        <input type="submit" name="Submit" value="Add" />&nbsp;
+      </div>
+      </label></td>
+    </tr>
+  </table>
+</form>
+</body>
+{% endblock %}

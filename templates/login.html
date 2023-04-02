@@ -1,0 +1,81 @@
+{% extends 'index.html' %}
+{% block body %}
+
+<body>
+  <!--<?php-->
+  <!---->
+ <!---->
+  <!--if(isset($_POST['Submit'])){-->
+    <!--$txtloginid=$_POST['txtloginid'];-->
+    <!--$txttype=$_POST['txttype'];-->
+    <!--$txtpwd=$_POST['txtpwd'];-->
+
+
+
+    <!--$server="localhost";-->
+    <!--$username="root";-->
+    <!--$password="";-->
+    <!--$dbname="hospital_mgmnt";-->
+    <!--$con=mysqli_connect($server,$username,$password,$dbname);-->
+
+     <!-- $con=mysqli_connect('localhost','root','','hospital_mgmnt'); -->
+
+    <!--if(!$con){-->
+     <!--die('connection error: '. mysqli_connect_error());-->
+    <!--}-->
+    <!--// else{-->
+    <!--//    echo" connected";-->
+    <!--// }-->
+      
+  <!--//  $query="INSERT INTO tbllogin(LoginID,Designation,Password) values(' $txtloginid','$txttype','$txtpwd')";-->
+   <!--$query="SELECT LoginID FROM tbllogin WHERE LoginID ='" . $txtloginid . "' AND Designation = '" . $txttype . "' AND Password = '" . $txtpwd ."';";-->
+  <!--echo $query;-->
+    <!--$result=mysqli_query($con, $query);-->
+    <!--if($result){-->
+      <!--//echo ("<script type='text/javascript'>alert('WELCOME');</script>");  -->
+      <!--if($txttype == "nurse")-->
+        <!--header('location:nursehome.html');-->
+      <!--elseif($txttype == "doctor")-->
+        <!--header('location:dochome.html');-->
+      <!--elseif($txttype == "receptionist")-->
+        <!--header('location:Receptionalisthome.html');-->
+      <!--elseif($txttype == "pharmasist")-->
+        <!--header('location:pharmhome.html');  -->
+      <!--else-->
+        <!--header('location:nursehome.html');-->
+    <!--//  &lt;!&ndash; header('location:nursehome.html') &ndash;&gt;-->
+    <!--}-->
+    <!--else{-->
+      <!--echo ("Login Error");-->
+      <!--// &lt;!&ndash; header('location:index.html') &ndash;&gt;-->
+    <!--}-->
+  <!--}-->
+<!--?>-->
+<form  name="form1" method="post" action="login">
+  <table  width="349" height="199" border="0">
+    <tr>
+      <td width="176" height="45">Login ID </td>
+      <td width="151"><label>
+        <input type="text" name="textfield" required="" class="form-control"  />
+      </label></td>
+    </tr>
+        <tr>
+      <td>Password</td>
+      <td><label>
+        <input type="password" name="textfield2" required="" class="form-control" />
+      </label></td>
+    </tr>
+    <tr>
+      <td colspan="2"><div align="center"><a href="#">forget password ?</a></div></td>
+    </tr>
+    <tr>
+      <td colspan="2"><div align="center">
+        <label>
+        <input type="submit" name="Submit" id="Submit" value="login"   class="btn btn-info"/>
+        </label>
+      </div>        <div align="center"></div></td>
+    </tr>
+  </table>
+</form>
+</body>
+{% endblock %}

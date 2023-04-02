@@ -1,0 +1,52 @@
+{% extends 'indexnurse.html' %}
+{% block body %}
+
+<body><head><style>
+#customers {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#customers td, #customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+/*#customers tr:nth-child(even){background-color: #00ccff;}*/
+
+#customers tr:hover {background-color: #ddd;}
+
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: center;
+  background-color:#00ccff;
+  color: white;
+}
+</style></head>
+<form id="form1" name="form1" method="post" action="/testname#faq">
+  <table id="customers" class="table" width="639" border="1">
+    <tr>
+      <th>Test Name </th>
+      <th>&nbsp;</th>
+    </tr>
+     {% for i in val %}
+    <tr>
+      <td>{{i.testName}}</td>
+      <td><a href="/deletetest/{{ i.id }}"  onclick="return confirm('Are you sure you want to delete this item?');">delete</a></td>
+    </tr>
+    {% endfor %}
+    <tr>
+      <td colspan="2"><label>
+      <div align="center"><a href="#">
+        <label>
+        <input type="submit" name="Submit" value="ADD" />
+        </label>
+      </a></div>
+      </label></td>
+    </tr>
+     </table>
+</form>
+</body>
+{% endblock %}
